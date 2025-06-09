@@ -1,9 +1,9 @@
-const USD = 4.87;
-const EUR = 5.32;
-const GBP = 6.08;
+ const USD = 5.58;
+ const EUR = 6.37;
+ const GBP = 7.55;
 
-const form = document.querySelector('form');
-const amount = document.getElementById("amount");
+ const form = document.querySelector('form');
+ const amount = document.getElementById("amount");
 const currency = document.getElementById('currency');
 const footer = document.querySelector('main footer');
 const description = document.getElementById("description");
@@ -22,7 +22,7 @@ form.onsubmit = (event) => {
         convertCurrency(amount.value, USD, "US$")
         break
 
-    case "EUR" :                                                                                                                                                                                         
+   case"EUR":                                                                                                                                                    
         convertCurrency(amount.value, EUR, "€")
         break
 
@@ -36,7 +36,7 @@ function convertCurrency(amount, price, symbol){
   try {
     description.textContent = `${symbol} 1 = ${formatCurrencyBRL(price)}`
 
-    let total = amount * price
+  let total = amount * price
     total = formatCurrencyBRL(total).replace("RS", "")
     result.textContent = `${total} Reais`
 
@@ -58,3 +58,4 @@ function formatCurrencyBRL(value) {
     currency: "BRL",
   })
 }
+
